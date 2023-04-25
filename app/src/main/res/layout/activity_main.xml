@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#01062A"
+    android:paddingHorizontal="12dp"
+    android:paddingVertical="40dp"
+    tools:context=".MainActivity">
+
+    <!--    android:background="#0b1edf"-->
+    <LinearLayout
+        android:id="@+id/password_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="Generated Password"
+            android:textAllCaps="true"
+            android:textColor="#4A577F"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/password_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_rounded_rectangle"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingVertical="18dp"
+            android:textColor="#EBECEF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            tools:text="!cvWi72Y8*8ky$PR" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/password_layout"
+
+        >
+
+        <TextView
+            android:id="@+id/password_length_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:text="Length: 20"
+            android:textAllCaps="true"
+            android:textColor="#4A577F"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/progress_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_rounded_rectangle"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="18dp">
+
+            <TextView
+                android:id="@+id/min_progress_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="8"
+                android:textColor="#EBECEF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/progress_parent"
+                app:layout_constraintStart_toStartOf="@id/progress_parent"
+                app:layout_constraintTop_toTopOf="@id/progress_parent" />
+
+            <com.google.android.material.slider.Slider
+                android:id="@+id/slider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:contentDescription="Password Length Slider"
+                android:stepSize="1"
+                android:value="20"
+                android:valueFrom="8"
+                android:valueTo="32"
+                app:layout_constraintBottom_toBottomOf="@id/progress_parent"
+                app:layout_constraintEnd_toStartOf="@id/max_progress_label"
+                app:layout_constraintStart_toEndOf="@id/min_progress_label"
+                app:layout_constraintTop_toTopOf="@id/progress_parent"
+                app:thumbColor="#EBECEF"
+                app:tickColor="#0951AD"
+                app:trackColor="#0951AD"
+                app:trackHeight="2dp" />
+
+            <TextView
+                android:id="@+id/max_progress_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="32"
+                android:textColor="#EBECEF"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/progress_parent"
+                app:layout_constraintEnd_toEndOf="@id/progress_parent"
+                app:layout_constraintStart_toEndOf="@id/slider"
+                app:layout_constraintTop_toTopOf="@id/progress_parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:paddingStart="8dp"
+            android:text="Settıngs"
+            android:textAllCaps="true"
+            android:textColor="#4A577F"
+            android:textStyle="bold" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/include_numbers_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_rounded_rectangle"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="16dp">
+
+            <TextView
+                android:id="@+id/include_numbers_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Include Numbers"
+                android:textColor="#EBECEF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/include_numbers_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/include_numbers_parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/include_numbers_switch"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:layout_constraintBottom_toBottomOf="@id/include_numbers_parent"
+                app:layout_constraintEnd_toEndOf="@id/include_numbers_parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/include_numbers_label"
+                app:layout_constraintTop_toTopOf="@id/include_numbers_parent"
+                app:thumbTint="#fff" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/include_letters_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_rounded_rectangle"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="16dp">
+
+            <TextView
+                android:id="@+id/include_letters_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Include Uppercase Letters"
+                android:textColor="#EBECEF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/include_letters_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/include_letters_parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/include_letters_switch"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:layout_constraintBottom_toBottomOf="@id/include_letters_parent"
+                app:layout_constraintEnd_toEndOf="@id/include_letters_parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/include_letters_label"
+                app:layout_constraintTop_toTopOf="@id/include_letters_parent"
+                app:thumbTint="#fff" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/include_symbols_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_rounded_rectangle"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="16dp">
+
+            <TextView
+                android:id="@+id/include_symbols_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="monospace"
+                android:text="Include Symbols"
+                android:textColor="#EBECEF"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/include_symbols_parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/include_symbols_parent" />
+
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/include_symbols_switch"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:layout_constraintBottom_toBottomOf="@id/include_symbols_parent"
+                app:layout_constraintEnd_toEndOf="@id/include_symbols_parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@id/include_symbols_label"
+                app:layout_constraintTop_toTopOf="@id/include_symbols_parent"
+                app:thumbTint="#fff" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/generate_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="#3C4EEC"
+            android:paddingVertical="12dp"
+            android:text="GENERATE PASSWORD"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="12dp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
