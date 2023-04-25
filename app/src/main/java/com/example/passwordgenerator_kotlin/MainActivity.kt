@@ -8,6 +8,8 @@ import android.widget.Button
 import androidx.lifecycle.ViewModelProvider
 import com.example.passwordgenerator_kotlin.databinding.ActivityMainBinding
 
+// Design Link: https://dribbble.com/shots/5900275-Password-Manager-App-Generate-Password-Settings
+
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var viewModel: MainActivityViewModel
